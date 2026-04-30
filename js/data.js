@@ -11,10 +11,10 @@ const trackingData = [
     },
     {
         noDO: 'DO002',
-        namaMahasiswa: 'Devi Isma',
+        namaMahasiswa: 'Devi Ismaulidyah',
         status: 'Dalam Perjalanan',
         ekspedisi: 'J&T',
-        tglKirim: '2026-04-25',
+        tglKirim: '2026-04-11',
         jenisPaket: 'Express',
         totalBayar: 45000
     },
@@ -39,7 +39,7 @@ const dataBahanAjar = [
     },
     {
         kdMataKuliah: 'MK002',
-        namaMataKuliah: 'Basis Data',
+        namaMataKuliah: 'Bahasa Inggris',
         stok: 15,
         harga: 45000
     },
