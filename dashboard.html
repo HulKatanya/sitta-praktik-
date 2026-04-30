@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Pemesanan Bahan Ajar UT-Daerah</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="assets/logo-ut.png" alt="Logo UT" class="nav-logo">
+            <span>Pemesanan Bahan Ajar</span>
+        </div>
+        <div class="nav-user">
+            <span id="greeting">Selamat datang!</span>
+            <button class="btn-logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="greeting-section">
+            <h1 id="timeGreeting">Selamat datang di Dashboard!</h1>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Informasi Bahan Ajar -->
+            <div class="menu-card" onclick="navigateTo('stok.html')">
+                <i class="fas fa-boxes"></i>
+                <h3>Informasi Bahan Ajar</h3>
+                <p>Kelola stok bahan ajar</p>
+            </div>
+            
+            <!-- Tracking Pengiriman -->
+            <div class="menu-card" onclick="navigateTo('tracking.html')">
+                <i class="fas fa-truck"></i>
+                <h3>Tracking Pengiriman</h3>
+                <p>Lacak status pengiriman DO</p>
+            </div>
+            
+            <!-- Laporan - Monitoring Progress DO -->
+            <div class="menu-card" onclick="showLaporanModal('monitoring')">
+                <i class="fas fa-chart-line"></i>
+                <h3>Monitoring Progress DO</h3>
+                <p>Progress pengiriman semua DO</p>
+            </div>
+            
+            <!-- Laporan - Rekap Bahan Ajar -->
+            <div class="menu-card" onclick="showLaporanModal('rekap')">
+                <i class="fas fa-file-alt"></i>
+                <h3>Rekap Bahan Ajar</h3>
+                <p>Ringkasan stok bahan ajar</p>
+            </div>
+            
+            <!-- Histori Transaksi -->
+            <div class="menu-card" onclick="showHistoriModal()">
+                <i class="fas fa-history"></i>
+                <h3>Histori Transaksi</h3>
+                <p>Riwayat pemesanan bahan ajar</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Laporan -->
+    <div id="laporanModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('laporanModal')">&times;</span>
+            <h2 id="laporanTitle"><i class="fas fa-chart-bar"></i> Laporan</h2>
+            <div id="laporanContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal Histori -->
+    <div id="historiModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('historiModal')">&times;</span>
+            <h2><i class="fas fa-history"></i> Histori Transaksi Bahan Ajar</h2>
+            <div id="historiContent"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/data.js"></script>
+</body>
+</html>
