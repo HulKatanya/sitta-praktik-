@@ -1,6 +1,6 @@
 // Data Login Dummy
 const validCredentials = {
-    'admin@ut.ac.id': 'admin123'
+    'shoba@ut.ac.id': 'shoba123'
 };
 
 // Inisialisasi saat DOM loaded
@@ -59,7 +59,7 @@ function handleLogin(e) {
     }
 }
 
-// Setup Modals - FULLY FUNCTIONAL
+// Setup Modals
 function setupModals() {
     // Close all modals
     document.querySelectorAll('.close, .modal').forEach(element => {
@@ -92,7 +92,7 @@ function setupModals() {
     });
 }
 
-// 🔥 LUPA PASSWORD - FULLY FUNCTIONAL
+// 🔥 LUPA PASSWORD
 function handleResetPassword(e) {
     e.preventDefault();
     
@@ -112,7 +112,7 @@ function handleResetPassword(e) {
     }, 1200);
 }
 
-// 🔥 DAFTAR AKUN - FULLY FUNCTIONAL dengan VALIDASI
+// 🔥 DAFTAR AKUN
 function handleDaftar(e) {
     e.preventDefault();
     
@@ -214,7 +214,7 @@ function showLaporanModal(type) {
     modal.style.display = 'block';
 }
 
-// Monitoring Progress DO - CARD LAYOUT PERFECT
+// Monitoring Progress DO
 function generateMonitoringContent() {
     const stats = {
         sent: trackingData.filter(d => d.status.toLowerCase() === 'dikirim').length,
@@ -422,7 +422,7 @@ function generateHistoriData() {
     return [
         {
             id: 'TXN001',
-            tanggal: '2024-01-20',
+            tanggal: '2026-04-30',
             mahasiswa: 'Ahmad Nurus Shoba',
             item: 'Pemrograman Web',
             qty: 2,
@@ -431,16 +431,16 @@ function generateHistoriData() {
         },
         {
             id: 'TXN002',
-            tanggal: '2024-01-19',
-            mahasiswa: 'Devi Isma',
-            item: 'Basis Data',
+            tanggal: '2026-04-11',
+            mahasiswa: 'Devi Ismaulidyah',
+            item: 'Bahasa Inggris',
             qty: 1,
             total: 45000,
             status: 'Lunas'
         },
         {
             id: 'TXN003',
-            tanggal: '2024-01-18',
+            tanggal: '2026-04-20',
             mahasiswa: 'M. Syamsudin',
             item: 'Jaringan Komputer',
             qty: 3,
@@ -666,6 +666,18 @@ document.addEventListener('DOMContentLoaded', function() {
         editForm.addEventListener('submit', handleEditStock);
     }
 });
+
+// Perfect Viewport Fix
+function fixViewport() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', fixViewport);
+window.addEventListener('orientationchange', () => {
+    setTimeout(fixViewport, 100);
+});
+fixViewport();
 
 function handleEditStock(e) {
     e.preventDefault();
