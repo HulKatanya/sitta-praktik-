@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Pengiriman - Pemesanan Bahan Ajar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="assets/logo-ut.png" alt="Logo UT" class="nav-logo">
+            <a href="dashboard.html" style="color: inherit; text-decoration: none;">
+                <span>Pemesanan Bahan Ajar</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card" style="margin-bottom: 40px;">
+            <h1 style="margin: 0; font-size: 2.25rem; color: var(--text-primary);">
+                <i class="fas fa-truck" style="color: var(--primary-500); margin-right: 16px;"></i>
+                Tracking Pengiriman
+            </h1>
+            <p style="color: var(--text-secondary); margin-top: 8px; font-size: 18px;">
+                Masukkan Nomor Delivery Order untuk melacak status pengiriman
+            </p>
+        </div>
+
+        <!-- Tracking Form -->
+        <div class="card" style="max-width: 600px; margin: 0 auto 40px auto;">
+            <form id="trackingForm">
+                <div class="input-group" style="position: relative;">
+                    <i class="fas fa-barcode" style="left: 24px;"></i>
+                    <input type="text" id="noDO" placeholder="Masukkan Nomor Delivery Order (contoh: DO001)" 
+                           style="padding-left: 80px; font-size: 18px; font-weight: 500;" required>
+                    <button type="submit" class="btn-search" style="
+                        position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
+                        width: auto; padding: 20px 32px; font-size: 16px;">
+                        <i class="fas fa-search"></i> Cari
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Result Section -->
+        <div id="trackingResult" style="display: none;">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+                    <h2 style="margin: 0; color: var(--text-primary); font-size: 1.75rem;">
+                        <i class="fas fa-user" style="color: var(--primary-500); margin-right: 12px;"></i>
+                        <span id="namaMahasiswa"></span>
+                    </h2>
+                </div>
+
+                <!-- Status & Progress -->
+                <div class="progress-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <span id="statusText" style="font-size: 18px; font-weight: 700; color: var(--text-primary);"></span>
+                            <span id="statusIcon" class="status-icon" style="font-size: 24px; margin-left: 12px;"></span>
+                        </div>
+                        <span id="progressPercent" style="font-size: 18px; font-weight: 700; color: var(--secondary-500);"></span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Detail Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px;">
+                    <div class="detail-item">
+                        <i class="fas fa-shipping-fast" style="color: var(--primary-500); margin-right: 12px;"></i>
+                        <strong>Ekspedisi:</strong> <span id="ekspedisi"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar" style="color: var(--secondary-500); margin-right: 12px;"></i>
+                        <strong>Tanggal Kirim:</strong> <span id="tglKirim"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-box" style="color: var(--text-secondary); margin-right: 12px;"></i>
+                        <strong>Jenis Paket:</strong> <span id="jenisPaket"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-money-bill" style="color: var(--secondary-500); margin-right: 12px;"></i>
+                        <strong>Total Bayar:</strong> <span id="totalBayar"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Result Message -->
+        <div id="noResult" class="card" style="display: none; text-align: center; padding: 64px 32px; max-width: 500px; margin: 40px auto;">
+            <i class="fas fa-search" style="font-size: 64px; color: var(--text-secondary); margin-bottom: 24px;"></i>
+            <h3 style="color: var(--text-primary); margin-bottom: 8px;">Nomor DO Tidak Ditemukan</h3>
+            <p style="color: var(--text-secondary); font-size: 18px;">
+                Pastikan nomor Delivery Order sudah benar. Contoh: <strong>DO001</strong>, <strong>DO002</strong>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/data.js"></script>
+</body>
+</html>
