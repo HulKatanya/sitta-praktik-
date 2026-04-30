@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pemesanan Bahan Ajar UT-Surabaya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="assets/logo-ut.png" alt="Logo UT" class="logo-ut">
+                <h1>Pemesanan Bahan Ajar</h1>
+                <p>UT-Surabaya</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+
+            <div class="login-links">
+    <button class="link-btn" id="lupaPasswordBtn">
+        <i class="fas fa-question-circle"></i> Lupa Password?
+    </button>
+    <button class="link-btn" id="daftarBtn">
+        <i class="fas fa-user-plus"></i> Daftar Akun Baru
+    </button>
+</div>
+   <!-- Modal Lupa Password - FULLY FUNCTIONAL -->
+<div id="lupaPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLupaModal">&times;</span>
+        <div style="text-align: center; margin-bottom: 24px;">
+            <i class="fas fa-key" style="font-size: 48px; color: #3b82f6; margin-bottom: 16px;"></i>
+            <h2 style="color: #1e293b; margin-bottom: 8px;">Lupa Password?</h2>
+            <p style="color: #64748b; margin: 0;">Masukkan email Anda untuk menerima link reset password</p>
+        </div>
+        <form id="resetPasswordForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="resetEmail" placeholder="Masukkan email Anda" required>
+            </div>
+            <button type="submit" class="btn-primary">
+                <i class="fas fa-paper-plane"></i> Kirim Link Reset
+            </button>
+        </form>
+        <div style="margin-top: 20px; text-align: center;">
+            <p style="color: #64748b; font-size: 14px;">
+                <i class="fas fa-info-circle"></i> 
+                Link reset akan dikirim dalam 5 menit
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Daftar - FULLY FUNCTIONAL -->
+<div id="daftarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeDaftarModal">&times;</span>
+        <div style="text-align: center; margin-bottom: 24px;">
+            <i class="fas fa-user-plus" style="font-size: 48px; color: #10b981; margin-bottom: 16px;"></i>
+            <h2 style="color: #1e293b; margin-bottom: 8px;">Daftar Akun Baru</h2>
+            <p style="color: #64748b; margin: 0;">Buat akun untuk mengakses sistem pemesanan</p>
+        </div>
+        <form id="daftarForm">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="daftarNama" placeholder="Nama Lengkap" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="daftarEmail" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="daftarPassword" placeholder="Password (min 6 karakter)" minlength="6" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="daftarConfirmPassword" placeholder="Konfirmasi Password" minlength="6" required>
+            </div>
+            <button type="submit" class="btn-primary">
+                <i class="fas fa-user-plus"></i> Daftar Sekarang
+            </button>
+        </form>
+        <div style="margin-top: 20px; text-align: center;">
+            <p style="color: #64748b; font-size: 14px;">
+                Sudah punya akun? <a href="#" onclick="closeModal('daftarModal'); document.getElementById('loginForm').scrollIntoView()">Login di sini</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
